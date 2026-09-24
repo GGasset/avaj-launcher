@@ -1,5 +1,8 @@
 public class AircraftFactory {
-	long id = 0;
+	private static AircraftFactory instance = null;
+
+	private long id = 0;
+	private AircraftFactory() {}
 
 	public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates)
 	{
@@ -15,4 +18,6 @@ public class AircraftFactory {
 				return null;
 		}
 	}
+
+	public static AircraftFactory getInstance() { if (instance == null) instance = new AircraftFactory(); return instance;}
 }

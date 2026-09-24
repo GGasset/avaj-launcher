@@ -1,18 +1,21 @@
 public class WeatherProvider {
+	private static WeatherProvider inst = null;
+
 	private String[] weather;
 	public int seed;
 
 	private WeatherProvider()
 	{
-
+		seed = 0;
 	}
 
 	String getCurrentWeather(Coordinates p_coordinates)
 	{
 		int weather = seed * p_coordinates.getLongitude() + p_coordinates.getLatitude();
-		weather = weather % 4;
+		if (p_coordinates.getHeight() > weather % 40 + 60 && weather % 8 >= 4) return "SUN";
 
-		switch (weather) {
+		switch (weather % 4) {
+			default:
 			case 0:
 				return "SUN";
 			case 1:
@@ -22,8 +25,8 @@ public class WeatherProvider {
 			case 3:
 				return "SNOW";
 		
-			default:
-				return "SUN";
 		}
 	}
+
+	public  static WeatherProvider getInstance() {  if (inst == null) inst = new WeatherProvider();  return inst; }
 }

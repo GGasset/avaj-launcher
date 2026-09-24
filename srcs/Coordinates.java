@@ -6,7 +6,9 @@ public class Coordinates
 
 	Coordinates(int p_logitude, int p_latitude, int p_height)
 	{
-
+		longitude = p_logitude;
+		latitude = p_latitude;
+		height = p_height;
 	}
 
 	public int getLongitude()
