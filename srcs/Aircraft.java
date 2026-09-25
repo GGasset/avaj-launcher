@@ -8,12 +8,12 @@ public abstract class Aircraft extends Flyable
 	protected Aircraft(long p_id, String p_name, Coordinates p_coordinate)
 	{
 		id = p_id;
-		p_name = name;
+		name = p_name;
 		coordinates = p_coordinate;
 	}
 
 	protected void logUpdate(String msg)
 	{
-		System.out.printf("%s#%s(%d): %s.", type, name, id, msg);
+		System.out.printf("%s#%s(%d): %s.\n", type, name, id, msg);
 	}
 }

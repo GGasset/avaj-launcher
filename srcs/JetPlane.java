@@ -37,6 +37,6 @@ public class JetPlane extends Aircraft {
 			default:
 				break;
 		};
-		if (nHeight <= 0) { weatherTower.unregister(this); logUpdate("Landing"); }
+		if (nHeight <= 0) {  logUpdate("Landing"); weatherTower.unregister(this); }
 	}
 }

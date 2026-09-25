@@ -11,7 +11,7 @@ public class AircraftFactory {
 				return new Helicopter(id++, p_name, p_coordinates);
 			case "JetPlane":
 				return new JetPlane(id++, p_name, p_coordinates);
-			case "Baloon":
+			case "Balloon":
 				return new Baloon(id++, p_name, p_coordinates);
 		
 			default:
